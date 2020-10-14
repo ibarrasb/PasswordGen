@@ -45,6 +45,13 @@ var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%
     }
     }else { 
       if(Special){
+        var LUn = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*)(<>?";
+        for(var i = 0; i < passwordLength; i++){
+          var randomNumber = Math.floor(Math.random() * LUn.length);
+          password1 += LUn.substring(randomNumber,randomNumber+1);
+          }
+          return password1;
+
 
       }else{
         var UpLowLet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -59,6 +66,21 @@ var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%
     }
     }else{
       if(hNun){
+        if(Special){
+          var Low = "0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*)(<>?";
+            for(var i = 0; i < passwordLength; i++){
+              var randomNumber = Math.floor(Math.random() * Low.length);
+              password1 += Low.substring(randomNumber,randomNumber+1);
+              }
+              return password1;
+        } else{
+          var Low = "0123456789abcdefghijklmnopqrstuvwxyz";
+            for(var i = 0; i < passwordLength; i++){
+              var randomNumber = Math.floor(Math.random() * Low.length);
+              password1 += Low.substring(randomNumber,randomNumber+1);
+              }
+              return password1;
+        }
 
       }else{
         //Accepts ONLY lowercase and special
@@ -89,12 +111,62 @@ var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%
   else{
     //User accepts UPPERCASE
        if(upCase){
+         if(hNun){
+           if (Special) {
+            var Low = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*)(<>?";
+            for(var i = 0; i < passwordLength; i++){
+              var randomNumber = Math.floor(Math.random() * Low.length);
+              password1 += Low.substring(randomNumber,randomNumber+1);
+              }
+              return password1;
+           } else{
+            var Low = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            for(var i = 0; i < passwordLength; i++){
+              var randomNumber = Math.floor(Math.random() * Low.length);
+              password1 += Low.substring(randomNumber,randomNumber+1);
+              }
+              return password1;
+           }
+         } else{
+           if(Special){
+            var Low = "ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*)(<>?";
+            for(var i = 0; i < passwordLength; i++){
+              var randomNumber = Math.floor(Math.random() * Low.length);
+              password1 += Low.substring(randomNumber,randomNumber+1);
+              }
+              return password1;
+
+           } else{
+            var Low = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            for(var i = 0; i < passwordLength; i++){
+              var randomNumber = Math.floor(Math.random() * Low.length);
+              password1 += Low.substring(randomNumber,randomNumber+1);
+              }
+              return password1;
+
+           }
+         }
 
        } 
        //User Declined UPPERCASE
        else{
          //User accepts NUMBERS
-         if(hNun){
+         if(hNun){ 
+           if(Special){
+            var chars = "0123456789!@#$%^&*)(<>?";
+            for(var i = 0; i < passwordLength; i++){
+              var randomNumber = Math.floor(Math.random() * chars.length);
+              password1 += chars.substring(randomNumber,randomNumber+1);
+              }
+              return password1;
+           } else{
+            var Low = "0123456789";
+            for(var i = 0; i < passwordLength; i++){
+              var randomNumber = Math.floor(Math.random() * Low.length);
+              password1 += Low.substring(randomNumber,randomNumber+1);
+              }
+              return password1;
+           }
 
          }
          //User declines NUMBERS
